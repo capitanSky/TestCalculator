@@ -10,14 +10,13 @@ public class StringCalculator {
                 String input = scanner.nextLine();
 
                 String[] parts = input.split(" ");
-                if (parts.length != 3) {
+                String operand1 = (parts.length == 4) ? parts[0] + " " + parts[1] : parts[0];
+                String operator = (parts.length == 4) ? parts[2] : parts[1];
+                String operand2 = (parts.length == 4) ? parts[3] : parts[2];
+
+                if (parts.length < 3) {
                     throw new IllegalArgumentException("Неправильное выражение!");
                 }
-
-
-                String operand1 = parts[0];
-                String operator = parts[1];
-                String operand2 = parts[2];
 
                 if (!operand1.startsWith("\"") || !operand1.endsWith("\"")) {
                     throw new IllegalArgumentException("Первый операнд должен быть строкой в кавычках!");
