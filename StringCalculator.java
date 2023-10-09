@@ -89,7 +89,7 @@ public class StringCalculator {
         }
     }
 
-    // Метод для проверки, является ли строка числом
+    
     private static boolean isNumeric(String str) {
         try {
             Integer.parseInt(str);
